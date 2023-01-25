@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+</head>
+<body class="productos">
+    <nav class="navbar bg-light navcolor">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://www.svgrepo.com/show/65988/cupcake.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            Sweet Bakery
+          </a>
+          <nav class="nav justify-content-right">
+            <a class="nav-link text-dark" href="./index.html">Home</a>
+            <a class="nav-link text-dark" href="/productos">Productos</a>
+            <a class="nav-link text-dark nav-carrito" href="./carrito.html">Carrito <span id="numero-carrito">(0)</span></a>
+          </nav>
+        </div>
+      </nav>
+
+    <div class="container mb-5">
+      <div class="col-12 mt-3 text-center">
+        <h2>Nuestros Productos</h2>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+        <% for (let producto of data){ %> 
+        <div class="col">
+          <div class="card h-100 cardProductos" id=<%= producto.id +"p" %>   >
+            <img src=<%= producto.imagen %> height="300" class="card-img-top img-cortar" alt="cheesecake arandanos">
+            <div class="card-body">
+              <h5 class="card-title"> <%= producto.nombre %> </h5>
+              <p class="card-text">Precio: $<%= producto.precio %></p>
+            </div>
+          </div>
+        </div>
+        <% } %> 
+        
+      </div>
+
+    </div>
+    <footer class="text-center bg-light fixed-bottom">
+      <div class="text-center text-dark p-3">
+          © 2022 Copyright: Sweet Pastry || Todos los derechos Reservados
+        </div>
+  </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="../assets/javascript/app.js"></script>
+<script src="../assets/javascript/carro.js"></script>
+</body>
+</html>
